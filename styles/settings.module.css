@@ -1,0 +1,51 @@
+.container {
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+.menu {
+    position: relative ;
+    display: flex;
+}
+
+.button {
+    background-color: rgba(246, 246, 246, 0.95);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.icon {
+    color: #0070f3;
+    width: 18px;
+}
+
+.icon:hover,
+.icon:focus,
+.icon:active {
+  color: rgb(56, 124, 201);
+ 
+}
+
+.drawer {
+    padding: 1rem 1rem 0 0;
+    background-color: rgba(246, 246, 246, 0.95);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mediumHeading {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2e2e2e;
+    text-decoration: underline;
+}
+
+.list {
+    padding-bottom: 1rem;
+    list-style: none;
+}
