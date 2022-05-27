@@ -22,8 +22,8 @@ const ThemeSwitch = () => {
         setTheme(e.target.value);
       }}
     >
-      <option value="darkmode">Dark</option>
-      <option value="lightmode">Light</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
     </select>
   );
 };
