@@ -1,25 +1,32 @@
-import { ComponentPropsWithoutRef, FC } from "react";
+import { FC } from "react";
+import cx from "classnames";
 
 import styles from "../../styles/settings.module.css";
+import { DrawerType } from "../../types/components/settings";
+import ThemeSwitch from "./ThemeSwitch";
+import { useTheme } from "next-themes";
 
-interface Props extends ComponentPropsWithoutRef<"div"> {
-  visible: boolean;
-}
+const Drawer: FC<DrawerType> = ({ visible }) => {
+  const { theme } = useTheme();
+  return (
+    <>
+      {visible && (
+        <div
+          className={cx(styles.drawer, theme === "light" && styles.darkAccents)}
+        >
+          <h2 className={styles.mediumHeading}>Settings</h2>
+          <br />
 
-const Drawer: FC<Props> = ({ visible }) => (
-  <>
-    {visible && (
-      <div className={styles.drawer}>
-        <h2 className={styles.mediumHeading}>Settings</h2>
-        <br />
-
-        <ul className={styles.list}>
-          <li>Item One</li>
-          <li>Item Two</li>
-        </ul>
-      </div>
-    )}
-  </>
-);
+          <ul className={styles.list}>
+            <li>
+              <ThemeSwitch />
+            </li>
+            <li>Item Two</li>
+          </ul>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default Drawer;
